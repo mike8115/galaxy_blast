@@ -28,7 +28,7 @@ v0.0.2  - Development moved to GitHub, https://github.com/peterjc/galaxy_blast
         - Now depends on ``package_blast_plus_2_2_29`` in ToolShed.
 v0.0.3  - Updated fetch_blast_db.py to use the current date as the ID
         - Tool and script now also updates ``blastdb_p`` data tables as needed
-        - Updated data_manager_conf.xml to handle ``blastdb_p`` as needed
+        - Tool and script now also updates ``blastdb_d`` data tables as needed
         - Tool now uses a dropdown menu to select the desired database
 ======= ======================================================================
 
