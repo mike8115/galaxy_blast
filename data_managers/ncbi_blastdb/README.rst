@@ -4,8 +4,9 @@ Galaxy Data Manager for NCBI BLAST databases
 Copyright 2014 by Daniel Blankenberg (Penn State University, PA 16802, USA),
 and additional contributors. All rights reserved. See the licence text below.
 
-Downloads preformatted NCBI BLAST databases and updates ``blastdb`` and ``blastdb_p`` 
-data tables accordingly and uses the NCBI's ``update_blast.pl`` script internally. See:
+Downloads preformatted NCBI BLAST databases and updates ``blastdb`` and
+``blastdb_p``  data tables accordingly. Uses the NCBI's ``update_blast.pl``
+script internally. See:
 
 Blankenberg et al. (2014) Wrangling Galaxy's reference data
 http://dx.doi.org/10.1093/bioinformatics/btu119
@@ -71,4 +72,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-

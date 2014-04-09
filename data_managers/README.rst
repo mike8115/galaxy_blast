@@ -6,4 +6,3 @@ for example ``ncbi_blastdb`` contains a Data Manager for fetching
 the NCBI BLAST databases.
 
 For general information, see the `main README file <../README.rst>`_.
-

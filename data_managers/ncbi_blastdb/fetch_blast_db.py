@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 #Adapted from Dan Blankenberg's data_manager_example_blastdb_ncbi_update_blastdb
 #Michael Li, Microbial Biodiversity Bioinformatics group, Agriculture and Agri-Food Canada, April 2014
 #Script that downloads preformatted databases from NCBI.
@@ -25,7 +24,7 @@ def main():
     target_directory = params[ 'output_data' ][0]['extra_files_path']
     os.mkdir( target_directory )
 
-    #Fetch parameters from input JSON file    
+    #Fetch parameters from input JSON file
     blastdb_name = params['param_dict']['db_type'].get( 'blastdb_name' )
     blastdb_type = params['param_dict']['db_type'].get( 'blastdb_type' )
     data_description = params['param_dict']['advanced'].get( 'data_description', None )
@@ -48,7 +47,7 @@ def main():
             tar_file = tarfile.open(os.path.join( target_directory, archive_name ), mode='r')
             tar_file.extractall( target_directory )
             tar_file.close()
-        
+
         #If the download fails, ftplib should generate an error in ftplib.all_errors
         #Likewise, tarfile.ReadError should catch any errors when reading from the tar
         #And other possible errors that can occur here...
