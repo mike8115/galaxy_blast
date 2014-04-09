@@ -22,18 +22,18 @@ rm data_manager_blastdb.tar
 fi
 
 #Create tar file (-cf then -rf to add to it)
-tar -rf  ncbi_blastdb.tar test-data/cog_out.json
-tar -rf  ncbi_blastdb.tar test-data/pataa_out.json
-tar -rf  ncbi_blastdb.tar test-data/patnt_out.json
-tar -rf  ncbi_blastdb.tar tool-data/blastdb.loc.sample
-tar -rf  ncbi_blastdb.tar tool-data/blastdb_p.loc.sample
-tar -rf  ncbi_blastdb.tar tool-data/blastdb_d.loc.sample
-tar -rf  ncbi_blastdb.tar tool-data/tool_data_table_conf.xml.sample
-tar -rf  ncbi_blastdb.tar data_managers/ncbi_blastdb/data_manager_conf.xml
+tar -cf  ncbi_blastdb.tar data_managers/ncbi_blastdb/data_manager_conf.xml
 tar -rf  ncbi_blastdb.tar data_managers/ncbi_blastdb/README.rst
 tar -rf  ncbi_blastdb.tar data_managers/ncbi_blastdb/tool_dependencies.xml
 tar -rf  ncbi_blastdb.tar data_managers/ncbi_blastdb/blastdb.xml
 tar -rf  ncbi_blastdb.tar data_managers/ncbi_blastdb/fetch_blast_db.py
+tar -rf  ncbi_blastdb.tar tool-data/blastdb.loc.sample
+tar -rf  ncbi_blastdb.tar tool-data/blastdb_p.loc.sample
+tar -rf  ncbi_blastdb.tar tool-data/blastdb_d.loc.sample
+tar -rf  ncbi_blastdb.tar tool-data/tool_data_table_conf.xml.sample
+tar -rf  ncbi_blastdb.tar test-data/cog_out.json
+tar -rf  ncbi_blastdb.tar test-data/pataa_out.json
+tar -rf  ncbi_blastdb.tar test-data/patnt_out.json
 
 
 #Zip the tar file
