@@ -1,4 +1,4 @@
-<tool id="ncbi_blast_plus_update_db" name="NCBI BLAST databases Data Manager" version="0.0.3" tool_type="manage_data">
+<tool id="ncbi_blastdb" name="NCBI BLAST Databases Data Manager" version="0.0.3" tool_type="manage_data">
     <description>Download a pre-formatted database from NCBI FTP website</description>
     <command interpreter="python">fetch_blast_db.py --filename "${out_file}" --tool_data_table_name $db_type.blastdb_type</command>
     <requirements>

@@ -10,6 +10,7 @@ import subprocess
 import time
 import tarfile
 from ftplib import FTP
+from datetime import datetime
 from galaxy.util.json import from_json_string, to_json_string
 
 def main():
@@ -40,6 +41,7 @@ def main():
             ftp = FTP('ftp.ncbi.nih.gov')
             ftp.login()
             ftp.cwd('pub/mmdb/cdd/little_endian')
+            date = datetime.strptime(ftp.sendcmd("MDTM " + archive_name)[4:], "%Y%m%d%H%M%S").strftime("%Y_%m_%d")
             ftp.retrbinary('RETR %s' % archive_name, tar_file.write)
             tar_file.close()
 
@@ -81,10 +83,13 @@ def main():
     
     #Set id and description if not provided in the advanced settings
     if not data_id:
-        #Use download time to create uniq id
-        localtime = time.localtime()
-        timeString = time.strftime("%Y_%m_%d", localtime)
-        data_id = "%s_%s" % ( blastdb_name, timeString )
+        if not date:
+            #Use download time to create uniq id, if date cannot be found
+            localtime = time.localtime()
+            timeString = time.strftime("%Y_%m_%d", localtime)
+            data_id = "%s_%s" % ( blastdb_name, timeString )
+        else:
+            data_id = "%s_%s" % ( blastdb_name, date )
     
     # Attempt to automatically set description from alias file
     # Protein domain databases don't have an alias file
