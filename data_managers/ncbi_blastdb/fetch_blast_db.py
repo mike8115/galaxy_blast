@@ -9,6 +9,7 @@ import sys
 import subprocess
 import time
 import tarfile
+import ftplib
 from ftplib import FTP
 from datetime import datetime
 from galaxy.util.json import from_json_string, to_json_string
@@ -30,7 +31,7 @@ def main():
     blastdb_type = params['param_dict']['db_type'].get( 'blastdb_type' )
     data_description = params['param_dict']['advanced'].get( 'data_description', None )
     data_id = params['param_dict']['advanced'].get( 'data_id', None )
-    date = None;
+    date = None
     
     #update_blastdb.pl doesn't download protein domains, so we use ftp
     if blastdb_type == 'blastdb_d':
@@ -91,7 +92,7 @@ def main():
             data_id = "%s_%s" % ( blastdb_name, timeString )
         else:
             data_id = "%s_%s" % ( blastdb_name, date )
-    
+
     # Attempt to automatically set description from alias file
     # Protein domain databases don't have an alias file
     if not data_description and blastdb_type != 'blastdb_d':
@@ -116,7 +117,7 @@ def main():
         #If we manage to parse the pal or nal file, set description
         if alias_date and data_description:
             data_description = "%s (%s)" % ( data_description, alias_date )
-    
+ 
     #If we could not parse the nal or pal file for some reason
     if not data_description:
         data_description = data_id
